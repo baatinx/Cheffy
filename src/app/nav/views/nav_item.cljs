@@ -5,10 +5,11 @@
                         :pb 10})
   
   (defn nav-item
-    [{:keys [id name href]}]
+    [{:keys [id name href dispatch]}]
     [:> Box {:key id
              :as "a"
              :href href
+             :on-click  dispatch
              :ml (:ml item-properties)
              :pb (:pb item-properties)}
      name])
