@@ -31,5 +31,5 @@
              :py 1}
      
      (for [item nav-items]
-       [:div {:key (:id item)}
-        [nav-item item]])]))
+       ^{:key (:id item)}
+        [nav-item item])]))
