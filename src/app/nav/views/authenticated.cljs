@@ -11,7 +11,7 @@
                     :href "#saved"
                     :dispatch #(rf/dispatch [:set-active-nav :saved])}
                    {:id :recipes
-                    :name "Recipes"
+                    :name "recipes"
                     :href "#recipes"
                     :dispatch #(rf/dispatch [:set-active-nav :recipes])}
                    {:id :inboxes

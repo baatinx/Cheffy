@@ -3,21 +3,47 @@
             [re-frame.core :as rf]
             [app.db]
 
+            ;; -- auth --
+            [app.auth.views.profile :refer [profile]]
+            
+            ;; -- become-a-chef
+            [app.become-a-chef.views.become-a-chef :refer [become-a-chef]]
+            
+            ;; -- inbox --
+            [app.inbox.views.inboxes :refer [inboxes]]
+            
             ;; -- nav --
             [app.nav.views.nav :refer [nav]]
             [app.nav.events]
             [app.nav.subs]
 
+            ;; -- recipes
+            [app.recipes.views.recipes :refer [recipes]]
+
             ;; -- smooth-ui --
             [app.theme :refer [cheffy-theme]]
-            ["@smooth-ui/core-sc" :refer [Normalize ThemeProvider Button]]))
+            ["@smooth-ui/core-sc" :refer [Normalize ThemeProvider Button Grid Row Col]]))
+
+(defn pages
+  [page-name]
+  (case page-name
+    :profile [profile]
+    :become-a-chef [become-a-chef]
+    :inboxes [inboxes]
+    :recipes [recipes]
+    [recipes]))
 
 (defn app
   []
-  [:<>
-   [:> Normalize]
-   [:> ThemeProvider {:theme cheffy-theme}
-    [nav]]])
+  (let [active-nav @(rf/subscribe [:active-nav])]
+    [:<>
+     [:> Normalize]
+     [:> ThemeProvider {:theme cheffy-theme}
+      [:> Grid {:fluid false}
+       [:> Row
+        [:> Col
+         [nav]
+         [pages active-nav]]]]]]))
 
 (defn ^:dev/after-load start
   []
