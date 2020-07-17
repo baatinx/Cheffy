@@ -6,6 +6,7 @@
             ;; -- nav --
             [app.nav.views.nav :refer [nav]]
             [app.nav.events]
+            [app.nav.subs]
 
             ;; -- smooth-ui --
             [app.theme :refer [cheffy-theme]]
