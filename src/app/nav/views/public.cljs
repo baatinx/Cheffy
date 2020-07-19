@@ -18,7 +18,7 @@
                     :name "sign-up"
                     :href "#sign-up"
                     :dispatch #(rf/dispatch [:set-active-nav :sign-up])}
-                   {:id :login
+                   {:id :log-in
                     :name "login"
                     :href "#login"
                     :dispatch #(rf/dispatch [:set-active-nav :log-in])}]]

@@ -1,12 +1,12 @@
 (ns app.core
-  (:require [reagent.core :as r]
+  (:require [reagent.dom :as r]
             [re-frame.core :as rf]
             [app.db]
 
             ;; -- auth --
             [app.auth.views.profile :refer [profile]]
             [app.auth.views.sign-up :refer [sign-up]]
-            [app.auth.views.log-in :refer [log-in] ]
+            [app.auth.views.log-in :refer [log-in]]
             
             ;; -- become-a-chef
             [app.become-a-chef.views.become-a-chef :refer [become-a-chef]]
