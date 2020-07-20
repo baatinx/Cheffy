@@ -7,6 +7,7 @@
             [app.auth.views.profile :refer [profile]]
             [app.auth.views.sign-up :refer [sign-up]]
             [app.auth.views.log-in :refer [log-in]]
+            [app.auth.events]
             
             ;; -- become-a-chef
             [app.become-a-chef.views.become-a-chef :refer [become-a-chef]]
@@ -24,7 +25,7 @@
 
             ;; -- smooth-ui --
             [app.theme :refer [cheffy-theme]]
-            ["@smooth-ui/core-sc" :refer [Normalize ThemeProvider Button Grid Row Col]]))
+            ["@smooth-ui/core-sc" :refer [Normalize ThemeProvider Grid Row Col]]))
 
 (defn pages
   [page-name]
