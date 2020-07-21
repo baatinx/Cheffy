@@ -1,9 +1,9 @@
 (ns app.auth.views.log-in
   (:require [re-frame.core :as rf]
             [reagent.core :as r]
-            ["@smooth-ui/core-sc" :refer [Box Row Col Button ]]
             [app.components.page-nav :refer [page-nav]]
-            [app.components.form-group :refer [form-group]]))
+            [app.components.form-group :refer [form-group]]
+            ["@smooth-ui/core-sc" :refer [Box Row Col Button]]))
 
 (defn log-in
   []
